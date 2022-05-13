@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+html,body{
+    height: 100%;
+}
+body{
+    margin: 0;
+}
+body img{
+    height:100%;
+    width:100%;
+}
+input::-webkit-input-placeholder{
+	color:white;
+}
+.box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;
+    text-align:center;
+    background:rgba(0,0,0,.4);
+}        
+.box h1{
+	color:white;
+	margin-top:10px;
+}
+.box .box1{
+	position:relative;
+	margin:10px;
+}
+.box .box1 input{
+	width:60%;
+	border:none;
+	outline:none;
+	border-bottom:2px solid white;
+	background:transparent;
+	color:white;
+	font-size:16px;
+}
+.box .box1 input:focus{
+	border-bottom:2px solid green;
+	transition:.5s;
+}
+.box .box2{
+	position:relative;
+	margin-top:40px;
+}
+.box input[type="submit"]{
+	margin-left:20px;
+    padding:5px;
+    color:white;
+    width:200px;
+    font-size:16px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.5s;
+    background-image:linear-gradient(to right,#3498db,#2ecc71,#1B657B);
+    background-size:200%;
+}    
+.box input[type="submit"]:hover{
+	background-position:right;
+}    
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="../images/shan.jpeg" alt="">
+        <div class="box">
+            <h1>Register</h1>
+            <form class = "" name = "f" >
+                <div class="box1"><input type="text" placeholder="Username" name="name" id="name"><br></div>
+                <div class="box1"><input type="password" placeholder="Password" name="password" id="password"><br></div>
+                <div class="box2"><input type="submit" value="Submit"></div>
+                
+             </form>
+        </div>
+    </div>
+    
+    
+</body>
+<script type = "text/javascript"></script>
+<script>
+	var usernm,pwd; 
+	$(".box2").click(function login(){
+		usernm = $("#name").val();
+		pwd = $("#password").val();
+		
+		if(usernm.length<2 || usernm.length>8){
+			console.log("sss");
+			alert("格式错误");
+			//return;
+		}else{
+            //alert('注册成功');
+            window.document.f.action="zhuce.php";
+		 	//window.document.f.submit();
+        }
+
+
+	});
+
+	
+	
+
+</script>
+</html>

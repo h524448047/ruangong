@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录页面</title>
+	<script src = "http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<style>
+html,body{
+    height: 100%;
+}
+body{
+	margin:0;
+	padding:0;
+	background-size:cover;
+}
+body img{
+	height:100%;
+	width:100%;
+}
+input::-webkit-input-placeholder{
+	color:white;
+}
+.box{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:400px;
+	text-align:center;
+	background:rgba(0,0,0,.4);
+}
+.box h1{
+	color:white;
+	margin-top:10px;
+}
+.box .box1{
+	position:relative;
+	margin:10px;
+}
+.box .box1 input{
+	width:60%;
+	border:none;
+	outline:none;
+	border-bottom:2px solid white;
+	background:transparent;
+	color:white;
+	font-size:16px;
+}
+.box .box1 input:focus{
+	border-bottom:2px solid green;
+	transition:.5s;
+}
+.box .box2{
+	position:relative;
+	margin-top:40px;
+}
+.box input[type="submit"]{
+	margin-left:20px;
+	padding:5px;
+	color:white;
+	width:200px;
+	font-size:16px;
+	border:none;
+	border-radius:12px;
+	cursor:pointer;
+	transition:.5s;
+	background-image:linear-gradient(to right,red,#3498db,#2ecc71);
+	background-size:200%;
+}
+.box input[type="submit"]:hover{
+	background-position:right;
+}
+.box4 a{
+    color: #ffffff;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+</style>
+
+<body>
+   <div>
+      <img src="../images/beijing.jpg">
+	<div class="box">
+		<h1>Login</h1>
+		<form name="f">
+		   <div class="box1">
+			<input type="text" placeholder="Username" name="name" id="name" >
+		   </div>
+		
+		   <div class="box1">
+			<input type="password" placeholder="Password" name="password" id="password">
+		   </div>
+		   <div class="box2">
+               <span class="box3"><input type="submit" value="Login"></span>
+               <span class="box4"> <a href="register.html">注册账号</a></span>
+		   </div>
+		</form>
+	</div>
+   </div>
+</body>
+<script type = "text/javascript"></script>
+<script>
+	var usernm,pwd; 
+	$(".box3").click(function login(){
+		usernm = $("#name").val();
+		pwd = $("#password").val();
+		
+		if(usernm.length<2 || usernm.length>8){
+			console.log("sss");
+			alert("格式错误");
+		}else{
+            window.document.f.action="register.php";
+		 	window.document.f.submit();
+        }
+
+
+	});
+
+	
+	
+
+</script>
+</html>
